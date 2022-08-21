@@ -8,14 +8,15 @@
   </head>
 
   <body>
+    <!-- Markup -->
     <div class="cards">
       <div class="card" data-description="Abhay is cool">
-        <img src="https://picsum.photos/200" alt="Abhay Vats" />
+        <img src="https://picsum.photos/200?random=1" alt="Abhay Vats" />
         <h2>Abhay Vats</h2>
         <button>Learn more →</button>
       </div>
       <div class="card" data-description="Piyush is neat!">
-        <img src="https://picsum.photos/200" alt="Piyush Kapoor" />
+        <img src="https://picsum.photos/200?random=2" alt="Piyush Kapoor" />
         <h2>Piyush Kapoor</h2>
         <button>Learn more →</button>
       </div>
@@ -24,6 +25,74 @@
     <div class="modal-outer">
       <div class="modal-inner"></div>
     </div>
+
+    <!-- Styles -->
+    <style>
+      .cards {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 100vh;
+      }
+
+      .card {
+        background-color: white;
+        padding: 2rem;
+        box-shadow: 4px 4px 0 black;
+      }
+
+      .card img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .card h2 {
+        color: black;
+      }
+
+      .card button {
+        cursor: pointer;
+      }
+
+      .modal-outer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        /* Hide initially */
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.7s;
+      }
+
+      .modal-outer.open {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .modal-inner {
+        background-color: white;
+        padding: 2rem;
+        transform: translateY(-10%);
+        transition: transform 0.7s;
+      }
+
+      .modal-inner h2 {
+        color: black;
+      }
+
+      .modal-inner.open {
+        transform: translateY(0);
+      }
+    </style>
+
+    <!-- Script -->
     <script src="./index.js"></script>
   </body>
 </html>
