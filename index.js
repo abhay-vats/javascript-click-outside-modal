@@ -18,19 +18,14 @@ const handleButtonClick = (e) => {
   `;
   innerModal.innerHTML = innerModalHtml;
 
-  // Add classes to open modal
-  innerModal.classList.add('open');
+  // Add class to open modal
   outerModal.classList.add('open');
 };
 
 // Setup outer modal click
 const handleOuterModalClick = (e) => {
   const isOutside = !e.target.closest('.modal-inner');
-
-  if (isOutside) {
-    innerModal.classList.remove('open');
-    outerModal.classList.remove('open');
-  }
+  isOutside && outerModal.classList.remove('open');
 };
 
 // Attach listeners
